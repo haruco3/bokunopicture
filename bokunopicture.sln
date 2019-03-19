@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bokunopicture", "bokunopicture\bokunopicture.csproj", "{36B58882-AEB8-4C9B-AE07-22A53FE10BDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36B58882-AEB8-4C9B-AE07-22A53FE10BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B58882-AEB8-4C9B-AE07-22A53FE10BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B58882-AEB8-4C9B-AE07-22A53FE10BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B58882-AEB8-4C9B-AE07-22A53FE10BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C036FB44-3027-481E-B120-4760EED3DEE1}
+	EndGlobalSection
+EndGlobal
