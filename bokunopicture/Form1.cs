@@ -20,16 +20,32 @@ namespace bokunopicture
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void showButton_Click(object sender, EventArgs e)
         {
-            // Click on the link below to continue learning how to build a desktop app using WinForms!
-            System.Diagnostics.Process.Start("http://aka.ms/dotnet-get-started-desktop");
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Load(openFileDialog1.FileName);
+            }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void backgroundButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thanks!");
+
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
