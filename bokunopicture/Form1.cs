@@ -18,6 +18,16 @@ namespace bokunopicture
         public Form1()
         {
             InitializeComponent();
+            this.AllowDrop = true;
+        }
+
+        private void scaleImage()
+        {
+            // Scale picture to fit inside window if image larger than window
+            if (pictureBox1.Image.Width > pictureBox1.Width || pictureBox1.Image.Height > pictureBox1.Height)
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            else
+                pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
         }
 
         private void showButton_Click(object sender, EventArgs e)
@@ -25,27 +35,51 @@ namespace bokunopicture
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Load(openFileDialog1.FileName);
+                scaleImage();
             }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-
+            pictureBox1.Image = null;
         }
 
         private void backgroundButton_Click(object sender, EventArgs e)
         {
-
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.BackColor = colorDialog1.Color;
+            }
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void pictureBox1_Layout(object sender, LayoutEventArgs e)
         {
+            if (pictureBox1.Image != null)
+            {
+                scaleImage();
+            }
+        }
 
+        private void pictureBox1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            pictureBox1.Image = Image.FromFile(files[0]);
+            scaleImage();
+        }
+
+        private void Form1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
