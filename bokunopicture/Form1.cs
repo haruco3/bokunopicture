@@ -21,6 +21,23 @@ namespace bokunopicture
             this.AllowDrop = true;
         }
 
+        public Form1(string img) : this()
+        {
+            Console.WriteLine(img);
+            if (img != string.Empty)
+            {
+                try
+                {
+                    pictureBox1.Load(img);
+                    scaleImage();
+                }
+                catch (System.NotSupportedException)
+                {
+                    MessageBox.Show("Error: File path in unsupported format");
+                }
+            }
+        }
+
         private void scaleImage()
         {
             // Scale picture to fit inside window if image larger than window
@@ -28,6 +45,8 @@ namespace bokunopicture
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             else
                 pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         private void showButton_Click(object sender, EventArgs e)
