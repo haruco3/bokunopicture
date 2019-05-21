@@ -20,9 +20,11 @@ namespace bokunopicture
             if (args.Length == 0)
                 Application.Run(new Form1());
             else
+            {
                 Console.WriteLine("here");
                 Console.WriteLine(args[0]);
                 Application.Run(new Form1(args[0]));
+            }
         }
     }
 }
